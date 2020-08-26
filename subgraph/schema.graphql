@@ -1,6 +1,6 @@
 type Token @entity {
   id: ID!
-  contractAddress: Bytes!
+  contractAddress: String!
   contractName: String!
   contractSymbol: String!
   tokenId: BigInt!
