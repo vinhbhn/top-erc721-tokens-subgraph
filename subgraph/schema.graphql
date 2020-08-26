@@ -1,0 +1,11 @@
+type Token @entity {
+  id: ID!
+  contractAddress: Bytes!
+  contractName: String!
+  contractSymbol: String!
+  tokenId: BigInt!
+  tokenURI: String!
+  metadataName: String!
+  metadataDescription: String!
+  metadataImageURI: String!
+}
