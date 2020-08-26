@@ -5,7 +5,7 @@ type Token @entity {
   contractSymbol: String!
   tokenId: BigInt!
   tokenURI: String!
-  metadataName: String!
-  metadataDescription: String!
-  metadataImageURI: String!
+  metadataName: String
+  metadataDescription: String
+  metadataImageURI: String
 }

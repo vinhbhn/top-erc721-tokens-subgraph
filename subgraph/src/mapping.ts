@@ -1,3 +1,4 @@
+import { store } from '@graphprotocol/graph-ts'
 import {fillMetaData} from "./metadata-utils";
 import {
   Contract,
@@ -26,9 +27,13 @@ export function handleTransfer(event: Transfer): void {
     token.contractSymbol = contract.symbol();
     token.tokenURI = contract.tokenURI(tokenId);
 
-    // fetch info from the metadata
+    // fetch info from the metadata if stored on ipfs
     fillMetaData(token);
 
     token.save()
+  }
+
+  else if (from != zeroAddress && to == zeroAddress) {
+    store.remove('Token', id);
   }
 }
