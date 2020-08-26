@@ -1,4 +1,4 @@
-import { BigInt } from "@graphprotocol/graph-ts"
+import {fillMetaData} from "./metadata-utils";
 import {
   Contract,
   Transfer,
@@ -25,9 +25,9 @@ export function handleTransfer(event: Transfer): void {
     token.contractName = contract.name();
     token.contractSymbol = contract.symbol();
     token.tokenURI = contract.tokenURI(tokenId);
-    token.metadataName = "TODO";
-    token.metadataDescription = "TODO";
-    token.metadataImageURI = "TODO";
+
+    // fetch info from the metadata
+    fillMetaData(token);
 
     token.save()
   }
