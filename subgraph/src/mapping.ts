@@ -14,4 +14,6 @@ export function handleTransfer(event: Transfer): void {
   token.metadataName = "TODO";
   token.metadataDescription = "TODO";
   token.metadataImageURI = "TODO";
+
+  token.save()
 }
