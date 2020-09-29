@@ -1,10 +1,8 @@
 import { store } from '@graphprotocol/graph-ts'
 import {fillMetaData} from "./metadata-utils";
-import {
-  Contract,
-  Transfer,
-} from "../generated/Contract/Contract"
+
 import { Token } from "../generated/schema"
+import {Contract, Transfer} from "../generated/KnownOrigin/Contract";
 
 let zeroAddress = '0x0000000000000000000000000000000000000000';
 
